@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .background {
+     background-image: url('https://preview.colorlib.com/theme/staging/img/project/project-p4.jpg');
+     height: 50vh;
+     /* Full screen height */
+     background-size: cover;
+     /* Cover the whole area */
+     background-position: center;
+     /* Center the image */
+     position: relative;
+     backdrop-filter: blur;
+ }
+ 
+ /*Loading Screen Starts*/
+ #loading-screen {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+     transition: opacity 0.5s ease-out;
+ }
+
+ #loading-screen.fade-out {
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ /* Spinner Animation */
+ .spinner {
+     width: 50px;
+     height: 50px;
+     border: 3px solid transparent;
+     border-top: 3px solid purple;
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ /*Loading Screen Ends*/
+ /*header section text starts*/
+  .header-section {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 1rem;
+        }
+
+        .home-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .separator {
+            color: #ccc;
+            margin: 0 3px;
+        }
+
+        .current-page {
+            color:#f7b95a;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 1.5rem;
+            }
+        }
+    /*header section text ends*/     
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        /* What We Do Section */
+        .what-we-do-section {
+            padding: 80px 50px;
+            background-color: #f8f8f8;
+        }
+
+        .section-header {
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: #f7b95a;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            color: #2C3E50;
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            text-align: left;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+            stroke: #f7b95a;
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .service-title {
+            color: #2C3E50;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .service-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            color: #2C3E50;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .service-features li:before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #2C3E50;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color:black;
+            padding: 60px 50px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            color: #f7b95a;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            padding: 80px 50px;
+            background-color: #f8f8f8;
+        }
+
+        .clients-header {
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .client-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
+        }
+
+        .client-logo svg {
+            height: 40px;
+            width: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .clients-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+ /*navbar starts*/
+ ul.menu a.active1,
+ .mobile-menu a.active1 {
+     border-bottom: 3px solid #f7b95a;
+     color: #f7b95a;
+ }
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 30px;
+     background-color: #222;
+     position: relative;
+ }
+
+ .logo {
+     font-size: 28px;
+     font-weight: bold;
+     color: white;
+ }
+
+ .logo span {
+     color: #f7b95a;
+ }
+
+ nav {
+     display: flex;
+     align-items: center;
+ }
+
+ ul.menu {
+     list-style: none;
+     display: flex;
+     gap: 30px;
+     margin: 0;
+     padding: 0;
+ }
+
+ ul.menu li {
+     position: relative;
+ }
+
+ ul.menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ ul.menu a:hover {
+     color: #f7b95a;
+ }
+
+ .dropdown-menu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: #333;
+     min-width: 160px;
+     z-index: 999;
+     flex-direction: column;
+     color: aliceblue;
+     padding: 10px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .dropdown:hover .dropdown-menu {
+     display: flex;
+ }
+
+ .dropdown-menu li {
+     width: 100%;
+ }
+
+ .dropdown-menu a {
+     padding: 10px 20px;
+     color: white;
+ }
+
+ /* Hamburger */
+ .hamburger {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     cursor: pointer;
+ }
+
+ .hamburger span {
+     width: 25px;
+     height: 3px;
+     background: white;
+     transition: 0.3s ease;
+ }
+
+ .hamburger:hover span {
+     background: #f7b95a;
+ }
+
+ .hamburger.active span:nth-child(1) {
+     transform: rotate(45deg) translate(6px, 6px);
+ }
+
+ .hamburger.active span:nth-child(2) {
+     opacity: 0;
+     transform: translateX(-20px);
+ }
+
+ .hamburger.active span:nth-child(3) {
+     transform: rotate(-45deg) translate(6px, -6px);
+ }
+
+ /* Mobile Nav */
+ .mobile-menu {
+     display: none;
+     flex-direction: column;
+     position: absolute;
+     top: 70px;
+     left: 0;
+     width: 100%;
+     background: #111;
+     z-index: 998;
+     padding: 20px 30px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .mobile-menu.active {
+     display: flex;
+ }
+
+ .mobile-menu li {
+     margin-bottom: 15px;
+ }
+
+ .mobile-menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ .mobile-menu a:hover {
+     color: #f7b95a;
+ }
+
+ .mobile-dropdown>a::after {
+     content: " ▼";
+     font-size: 12px;
+ }
+
+ .mobile-dropdown-menu {
+     display: none;
+     flex-direction: column;
+     background: #222;
+     color: aliceblue;
+     margin-top: 5px;
+     padding-left: 15px;
+     list-style: none;
+     margin-bottom: 0;
+ }
+
+ .mobile-dropdown.open .mobile-dropdown-menu {
+     display: flex;
+ }
+
+ .contact {
+     display: block;
+     text-align: right;
+ }
+
+ .contact small {
+     color: #ccc;
+     font-size: 12px;
+ }
+
+ .contact p {
+     font-size: 16px;
+     color: #f7b95a;
+     font-weight: bold;
+ }
+
+ @media (max-width: 768px) {
+     nav {
+         display: none;
+     }
+
+     .hamburger {
+         display: flex;
+     }
+
+     .contact {
+         display: none;
+     }
+ }
+
+ /*navbar ends*/
+ 
+ /* Footer Starts */
+ .footer {
+     margin-top: 40px;
+     background: #1a1a1a;
+     color: #ffffff;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .footer::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-image:
+         linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%),
+         linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%);
+     background-size: 60px 60px;
+     pointer-events: none;
+ }
+
+ .footer-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ /* Main Footer Content */
+ .footer-main {
+     padding: 60px 0 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+
+ /* Newsletter Section - Top Right */
+ .newsletter-section {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 60px;
+     padding-bottom: 40px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .newsletter-section h2 {
+     font-size: 2.2rem;
+     font-weight: 400;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     color: #ffffff;
+     margin: 0;
+ }
+
+ .newsletter-form {
+     display: flex;
+     align-items: center;
+     gap: 0;
+     max-width: 400px;
+ }
+
+ .newsletter-input {
+     padding: 15px 20px;
+     border: none;
+     background: #ffffff;
+     color: #333;
+     font-size: 16px;
+     outline: none;
+     border-radius: 0;
+     width: 300px;
+ }
+
+ .newsletter-input::placeholder {
+     color: #999;
+ }
+
+ .newsletter-btn {
+     padding: 15px 20px;
+     background:  #f7b95a;
+     border: none;
+     color: white;
+     cursor: pointer;
+     font-size: 16px;
+     transition: background 0.3s ease;
+     border-radius: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .newsletter-btn:hover {
+     background:  #f7b95a;
+ }
+
+ /* Footer Grid */
+ .footer-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 60px;
+     margin-bottom: 50px;
+ }
+
+ .footer-column h3 {
+     font-size: 1.1rem;
+     margin-bottom: 25px;
+     font-weight: 500;
+     color: #ffffff;
+ }
+
+ .footer-column ul {
+     list-style: none;
+ }
+
+ .footer-column ul li {
+     margin-bottom: 15px;
+ }
+
+ .footer-column ul li a {
+     color: #888;
+     text-decoration: none;
+     transition: color 0.3s ease;
+     font-size: 14px;
+     line-height: 1.6;
+ }
+
+ .footer-column ul li a:hover {
+     color:  #f7b95a;
+ }
+
+ /* Brand Column */
+ .brand-column .logo {
+     font-size: 2rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 25px;
+ }
+
+ .brand-column .logo::after {
+     content: '.';
+     color:  #f7b95a;
+ }
+
+ .contact-info {
+     color: #888;
+     font-size: 14px;
+     line-height: 1.8;
+     margin-bottom: 25px;
+ }
+
+ .contact-info p {
+     margin-bottom: 5px;
+ }
+
+ .contact-info .email-phone {
+     margin-top: 15px;
+ }
+
+ /* Social Links */
+ .social-links {
+     display: flex;
+     gap: 15px;
+ }
+
+ .social-links a {
+     width: 35px;
+     height: 35px;
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #888;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     font-size: 14px;
+     font-weight: 600;
+ }
+
+ .social-links a:hover {
+     background:  #f7b95a;
+     color: white;
+     transform: translateY(-2px);
+ }
+
+ /* Footer Bottom */
+ .footer-bottom {
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 25px 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 13px;
+     color: #888;
+ }
+
+ .footer-bottom a {
+     color: #f7b95a;
+     text-decoration: none;
+ }
+
+ .footer-bottom a:hover {
+     text-decoration: underline;
+ }
+
+ .footer-links {
+     display: flex;
+     gap: 30px;
+ }
+
+ .footer-links a {
+     color: #888;
+ }
+
+ .footer-links a:hover {
+     color:  #f7b95a;
+ }
+
+ /* Heart icon */
+ .heart {
+     color:  #f7b95a;
+     margin: 0 3px;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 1024px) {
+     .newsletter-section {
+         flex-direction: column;
+         gap: 30px;
+         text-align: center;
+     }
+
+     .newsletter-section h2 {
+         font-size: 2rem;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr 1fr;
+         gap: 40px;
+     }
+
+     .brand-column {
+         grid-column: span 3;
+         text-align: center;
+         order: -1;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .newsletter-section h2 {
+         font-size: 1.8rem;
+     }
+
+     .newsletter-form {
+         flex-direction: column;
+         gap: 15px;
+         max-width: 300px;
+         margin: 0 auto;
+     }
+
+     .newsletter-input {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .newsletter-btn {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 2;
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         gap: 15px;
+         text-align: center;
+     }
+
+     .footer-links {
+         gap: 20px;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .footer-main {
+         padding: 40px 0 0;
+     }
+
+     .newsletter-section {
+         margin-bottom: 40px;
+         padding-bottom: 30px;
+     }
+
+     .newsletter-section h2 {
+         font-size: 1.4rem;
+         letter-spacing: 0.5px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 1;
+     }
+
+     .social-links {
+         justify-content: center;
+     }
+
+     .footer-links {
+         flex-direction: column;
+         gap: 10px;
+     }
+ }
+
+ /* Footer Ends */
+    </style>
+</head>
+<body>
+      <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <script>
+        // Loading functionality started
+function showLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Show loading screen
+    loadingScreen.style.display = 'flex';
+    loadingScreen.classList.remove('fade-out');
+
+    // Hide main content
+    mainContent.classList.remove('show');
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Fade out loading screen
+    loadingScreen.classList.add('fade-out');
+
+    // Show main content
+    mainContent.classList.add('show');
+
+    // Remove loading screen from DOM after animation
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+    }, 500);
+}
+
+// Simulate loading time and hide loading screen
+window.addEventListener('load', function () {
+    // Simulate minimum loading time (adjust as needed)
+    setTimeout(hideLoading, 1500);
+});
+
+// Show loading on page refresh/navigation
+window.addEventListener('beforeunload', function () {
+    showLoading();
+});
+
+// Function to refresh the page (for demo purposes)
+function refreshPage() {
+    location.reload();
+}
+
+// Initialize - show loading screen immediately
+document.addEventListener('DOMContentLoaded', function () {
+    showLoading();
+});
+// Loading functionality ended
+    </script>
+    <!--navbar starts-->
+    <header>
+        <div class="logo">Staging<span>.</span></div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html">Project Details</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html" class="active1">Services</a></li>
+                        <li><a href="blog.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact">
+            <small>Call us for any questions</small>
+            <p>+01 123 456 789</p>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-dropdown" onclick="toggleDropdown(event)">
+            <a href="#">Pages</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="project.html">Project Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active1">Services</a></li>
+                <li><a href="blog.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const parent = e.currentTarget;
+            parent.classList.toggle('open');
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.mobile-dropdown').forEach(drop => {
+                if (!drop.contains(e.target)) {
+                    drop.classList.remove('open');
+                }
+            });
+        });
+        const links = document.querySelectorAll('a');
+        const current = window.location.pathname;
+
+        links.forEach(link => {
+            if (link.href.includes(`${current}`)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <!--navbar ends-->
+    <!-- Image on top  -->
+    <div class="background">
+        <!--header section text starts-->
+        <div class="header-section">
+        <h1 class="main-heading">OUR SERVICES</h1>
+        <nav class="breadcrumb">
+            <button class="home-button" onclick="goHome()">Home</button>
+            <span class="separator">~</span>
+            <span class="current-page">Services</span>
+        </nav>
+    </div>
+
+    <script>
+        function goHome() {
+            alert('Navigating to Home page...');
+            // In a real application, you would navigate to the home page
+            // window.location.href = '/';
+        }
+    </script>
+        <!--header section text ends-->
+    </div>
+    <!-- What We Do Section -->
+    <section class="what-we-do-section">
+        <div class="section-header">
+            <div class="section-subtitle">OUR SPECIALIZATION</div>
+            <h2 class="section-title">WHAT WE DO</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-item">
+                <svg class="service-icon" viewBox="0 0 64 64">
+                    <rect x="8" y="20" width="12" height="32" stroke="currentColor" fill="none"/>
+                    <rect x="26" y="16" width="12" height="36" stroke="currentColor" fill="none"/>
+                    <rect x="44" y="12" width="12" height="40" stroke="currentColor" fill="none"/>
+                    <path d="M4 8 L60 8 M4 56 L60 56" stroke="currentColor"/>
+                    <circle cx="32" cy="32" r="3" fill="currentColor"/>
+                </svg>
+                <h3 class="service-title">INTERIOR DESIGN</h3>
+                <p class="service-description">As you might expect of a company that began as a high-end interiors contractor, we pay strict attention.</p>
+                <ul class="service-features">
+                    <li>Energy allocation.</li>
+                    <li>Fire protection, safety</li>
+                    <li>Lifts and escalators.</li>
+                    <li>Facade engineering.</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <svg class="service-icon" viewBox="0 0 64 64">
+                    <rect x="12" y="16" width="8" height="36" stroke="currentColor" fill="none"/>
+                    <rect x="24" y="12" width="8" height="40" stroke="currentColor" fill="none"/>
+                    <rect x="36" y="20" width="8" height="32" stroke="currentColor" fill="none"/>
+                    <rect x="48" y="8" width="8" height="44" stroke="currentColor" fill="none"/>
+                    <rect x="14" y="20" width="4" height="2" fill="currentColor"/>
+                    <rect x="26" y="16" width="4" height="2" fill="currentColor"/>
+                    <rect x="38" y="24" width="4" height="2" fill="currentColor"/>
+                    <rect x="50" y="12" width="4" height="2" fill="currentColor"/>
+                </svg>
+                <h3 class="service-title">OFFICE DESIGN</h3>
+                <p class="service-description">Our commitment to exceptional quality has never wavered. To day ranks as one of the most highly-regarded construction.</p>
+                <ul class="service-features">
+                    <li>Active system.</li>
+                    <li>Air conditioning.</li>
+                    <li>BSRIA blue book.</li>
+                    <li>Building services engineer.</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <svg class="service-icon" viewBox="0 0 64 64">
+                    <path d="M8 48 L32 16 L56 48 Z" stroke="currentColor" fill="none"/>
+                    <rect x="24" y="36" width="16" height="12" stroke="currentColor" fill="none"/>
+                    <circle cx="32" cy="28" r="2" fill="currentColor"/>
+                    <rect x="28" y="40" width="8" height="8" stroke="currentColor" fill="none"/>
+                </svg>
+                <h3 class="service-title">HOME DESIGN</h3>
+                <p class="service-description">Interdisciplinary architectural studio with cultural, residential and commercial projects built worldwide.</p>
+                <ul class="service-features">
+                    <li>Pipework.</li>
+                    <li>Plant room.</li>
+                    <li>Plumbing.</li>
+                    <li>Rules of Thumb</li>
+                </ul>
+            </div>
+            
+            <div class="service-item">
+                <svg class="service-icon" viewBox="0 0 64 64">
+                    <rect x="8" y="8" width="40" height="48" stroke="currentColor" fill="none"/>
+                    <path d="M52 12 L56 8 L56 52 L52 56" stroke="currentColor" fill="none"/>
+                    <line x1="16" y1="16" x2="40" y2="16" stroke="currentColor"/>
+                    <line x1="16" y1="24" x2="32" y2="24" stroke="currentColor"/>
+                    <line x1="16" y1="32" x2="36" y2="32" stroke="currentColor"/>
+                    <circle cx="20" cy="44" r="2" fill="currentColor"/>
+                </svg>
+                <h3 class="service-title">DESIGN DRAWING</h3>
+                <p class="service-description">Creating architectural and creative solutions to help people realize their vision and make them a reality.</p>
+                <ul class="service-features">
+                    <li>Guidelines for building.</li>
+                    <li>Thermal comfort.</li>
+                    <li>Types of building services.</li>
+                    <li>Types of heating system.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">85</div>
+                <div class="stat-label">PROJECTS<br>COMPLETED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">127</div>
+                <div class="stat-label">HAPPY<br>CLIENTS</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">36</div>
+                <div class="stat-label">AWARDS<br>RECEIVED</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">74</div>
+                <div class="stat-label">CUPS OF<br>COFFEE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <div class="clients-header">
+            <div class="section-subtitle">BRANDING</div>
+            <h2 class="section-title">OUR CLIENTS</h2>
+        </div>
+        
+        <div class="clients-grid">
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="10" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="300" fill="#888">stackture</text>
+                    <rect x="0" y="15" width="6" height="6" fill="#888" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="20" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#888">CRAFTGENIC</text>
+                    <path d="M5 15 L15 25 L5 35" stroke="#888" stroke-width="2" fill="none" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="20" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#888">DESIGNRIPPLE</text>
+                    <circle cx="10" cy="20" r="6" stroke="#888" stroke-width="2" fill="none" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="25" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="300" fill="#888">Neural</text>
+                    <text x="25" y="32" font-family="Arial, sans-serif" font-size="12" font-weight="300" fill="#888">Construct</text>
+                    <rect x="5" y="12" width="12" height="16" stroke="#888" stroke-width="1" fill="none" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="20" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#888">DESIGNRIPPLE</text>
+                    <circle cx="10" cy="20" r="6" stroke="#888" stroke-width="2" fill="none" opacity="0.6"/>
+                </svg>
+            </div>
+            
+            <div class="client-logo">
+                <svg width="140" height="40" viewBox="0 0 140 40">
+                    <text x="25" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#888">REBEL</text>
+                    <text x="25" y="32" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#888">ARCHITECT</text>
+                    <polygon points="5,15 15,15 20,20 15,25 5,25 10,20" stroke="#888" stroke-width="1" fill="none" opacity="0.6"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-section">
+                        <h2>Ready to Work with Us?</h2>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+                            <button type="submit" class="newsletter-btn">✈</button>
+                        </form>
+                    </div>
+
+                    <!-- Footer Grid -->
+                    <div class="footer-grid">
+                        <!-- Brand Column -->
+                        <div class="footer-column brand-column">
+                            <div class="logo">Staging</div>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook">f</a>
+                                <a href="#" aria-label="Twitter">t</a>
+                                <a href="#" aria-label="Instagram">ig</a>
+                                <a href="#" aria-label="LinkedIn">in</a>
+                            </div>
+                        </div>
+
+                        <!-- Company Column -->
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Our Works</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Services Column -->
+                        <div class="footer-column">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Interior Design</a></li>
+                                <li><a href="#">Exterior Design</a></li>
+                                <li><a href="#">Planning</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Get In Touch Column -->
+                        <div class="footer-column">
+                            <h3>Get In Touch</h3>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First div started-->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div>
+                            Copyright © 2025 All rights reserved | This template is made with <span
+                                class="heart">♥</span> by <a href="#">Colorlib</a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#">Terms of use</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form functionality
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

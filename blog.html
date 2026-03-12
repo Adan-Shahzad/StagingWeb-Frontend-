@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Explore our blog for the latest home staging tips, team-building ideas, and pricing strategies.">
+    <meta name="keywords" content="home staging, blog, interior design, team building, pricing strategies">
+    <link rel="canonical" href="https://yourwebsite.com/blog">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+         * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ /*blog center starts*/
+        .staging-wrapper {
+            font-family: "Poppins", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .staging-wrapper h1, 
+        .staging-wrapper h2, 
+        .staging-wrapper h3, 
+        .staging-wrapper h4, 
+        .staging-wrapper h5, 
+        .staging-wrapper h6 {
+            color: #111111;
+            font-weight: 400;
+            font-family: "Aldrich", sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .staging-wrapper h1 { font-size: 3.5rem; }
+        .staging-wrapper h2 { font-size: 2.25rem; }
+        .staging-wrapper h3 { font-size: 1.875rem; }
+        .staging-wrapper h4 { font-size: 1.5rem; }
+        .staging-wrapper h5 { font-size: 1.125rem; }
+        .staging-wrapper h6 { font-size: 1rem; }
+
+        .staging-wrapper p {
+            font-size: 15px;
+            color: #707070;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .staging-wrapper img { 
+            max-width: 100%; 
+            height: auto;
+            display: block;
+        }
+
+        .staging-wrapper a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .staging-wrapper a:hover {
+            text-decoration: none;
+            outline: none;
+        }
+
+        /* Layout */
+        .staging-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .staging-grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        [class*="staging-grid-"] {
+            padding: 0 15px;
+        }
+
+        .staging-grid-12 { width: 100%; }
+        .staging-grid-8 { width: 66.67%; }
+        .staging-grid-4 { width: 33.33%; }
+
+        /* Section Padding */
+        .staging-spad { 
+            padding: 100px 0; 
+        }
+
+        /* Blog Styles */
+        .staging-blog__item {
+            margin-bottom: 55px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 55px;
+        }
+
+        .staging-blog__item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .staging-blog__item ul {
+            margin-bottom: 18px;
+            list-style: none;
+        }
+
+        .staging-blog__item ul li {
+            font-size: 14px;
+            color: #b7b7b7;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-right: 40px;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .staging-blog__item ul li:after {
+            content: "•";
+            position: absolute;
+            right: -25px;
+            top: 0;
+            color: #b7b7b7;
+        }
+
+        .staging-blog__item ul li:last-child {
+            margin-right: 0;
+        }
+
+        .staging-blog__item ul li:last-child:after {
+            display: none;
+        }
+
+        .staging-blog__item h2 {
+            color: #111111;
+            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.3;
+            margin-bottom: 30px;
+        }
+
+        .staging-blog__item img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .staging-blog__item__text {
+            padding: 35px 0 0;
+        }
+
+        .staging-blog__item__text a {
+            font-size: 14px;
+            color: #111111;
+            font-weight: 600;
+            position: relative;
+            padding-left: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .staging-blog__item__text a:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            width: 30px;
+            background: #111111;
+            transition: all 0.3s ease;
+        }
+
+        .staging-blog__item__text a:hover {
+            color: #f7b95a;
+        }
+
+        .staging-blog__item__text a:hover:before {
+            background: #f7b95a;
+            width: 35px;
+        }
+
+        /* Quote Section */
+        .staging-blog__item__quote {
+            background:#f7b95a;
+            padding: 40px;
+            position: relative;
+            margin: 55px 0;
+            border-radius: 8px;
+        }
+
+        .staging-blog__item__quote:after {
+            content: "";
+            position: absolute;
+            right: 40px;
+            bottom: 20px;
+            font-family: "Aldrich", sans-serif;
+            font-size: 80px;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 0;
+        }
+
+        .staging-blog__item__quote p {
+            color: #ffffff;
+            font-size: 20px;
+            font-family: "Aldrich", sans-serif;
+            line-height: 1.6;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .staging-blog__item__quote span {
+            color: #ffffff;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Pagination */
+        .staging-blog__pagination {
+            padding-top: 30px;
+            text-align: left;
+        }
+
+        .staging-blog__pagination a {
+            font-size: 15px;
+            color: #111111;
+            font-weight: 600;
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+
+        .staging-blog__pagination a:last-child {
+            margin-right: 0;
+        }
+
+        .staging-blog__pagination a:hover {
+            border-color: #f7b95a;
+            color: #f7b95a;
+        }
+
+        /* Sidebar Styles */
+        .staging-blog__sidebar {
+            padding-left: 30px;
+        }
+
+        .staging-blog__sidebar__about {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .staging-author__pic {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .staging-blog__sidebar__about p {
+            color: #353535;
+            margin-bottom: 25px;
+        }
+
+        .staging-blog__sidebar__search {
+            margin-bottom: 55px;
+        }
+
+        .staging-blog__sidebar__search form {
+            position: relative;
+        }
+
+        .staging-blog__sidebar__search form input {
+            width: 100%;
+            font-size: 15px;
+            color: #333;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 12px 40px 12px 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .staging-blog__sidebar__search form input:focus {
+            border-bottom-color: #f7b95a;
+            outline: none;
+        }
+
+        .staging-blog__sidebar__search form input::placeholder {
+            color: #b7b7b7;
+        }
+
+        .staging-blog__sidebar__search form button {
+            font-size: 15px;
+            color: #b7b7b7;
+            border: none;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .staging-blog__sidebar__categories,
+        .staging-blog__sidebar__feature,
+        .staging-blog__sidebar__tag,
+        .staging-blog__sidebar__social,
+        .staging-blog__sidebar__newslatter {
+            margin-bottom: 50px;
+        }
+
+        .staging-blog__sidebar h5 {
+            font-size: 20px;
+            color: #111111;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .staging-blog__sidebar h5:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #f7b95a;
+        }
+
+        .staging-blog__sidebar__categories ul li {
+            list-style: none;
+            font-size: 15px;
+            color: #707070;
+            line-height: 2.5;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.3s ease;
+        }
+
+        .staging-blog__sidebar__categories ul li:hover {
+            color:#f7b95a;
+            cursor: pointer;
+        }
+
+        .staging-blog__sidebar__feature__item {
+            display: flex;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .staging-blog__sidebar__feature__item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .staging-blog__sidebar__feature__item__pic {
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
+
+        .staging-blog__sidebar__feature__item__pic img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .staging-blog__sidebar__feature__item__text span {
+            font-size: 12px;
+            color: #b7b7b7;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: block;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .staging-blog__sidebar__feature__item__text h6 {
+            color: #111111;
+            font-size: 14px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .staging-blog__sidebar__feature__item:hover h6 {
+            color: #f7b95a;
+        }
+
+        .staging-blog__sidebar__tag a {
+            display: inline-block;
+            font-size: 13px;
+            color: #707070;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 15px 8px 0;
+            padding: 6px 12px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .staging-blog__sidebar__tag a:hover {
+            color: #ffffff;
+            background: #f7b95a;
+        }
+
+        .staging-blog__sidebar__social a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            font-size: 18px;
+            color: #707070;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            margin: 0 10px 10px 0;
+        }
+
+        .staging-blog__sidebar__social a:hover {
+            color: #ffffff;
+            background: #f7b95a;
+            border-color: #f7b95a;
+        }
+
+        .staging-blog__sidebar__newslatter form {
+            position: relative;
+        }
+
+        .staging-blog__sidebar__newslatter form input {
+            width: 100%;
+            font-size: 15px;
+            color: #333;
+            border: none;
+            background: transparent;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 12px 40px 12px 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .staging-blog__sidebar__newslatter form input:focus {
+            border-bottom-color: #f7b95a;
+            outline: none;
+        }
+
+        .staging-blog__sidebar__newslatter form input::placeholder {
+            color: #b7b7b7;
+        }
+
+        .staging-blog__sidebar__newslatter form button {
+            font-size: 18px;
+            color: #f7b95a;
+            border: none;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Screen Reader Only */
+        .staging-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Icons */
+        .staging-fa {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .staging-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .staging-grid-8, .staging-grid-4 {
+                width: 100%;
+            }
+            
+            .staging-blog__sidebar {
+                padding-left: 0;
+                padding-top: 50px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .staging-spad {
+                padding: 60px 0;
+            }
+            
+            .staging-blog__item h2 {
+                font-size: 1.5rem;
+                line-height: 1.4;
+            }
+            
+            .staging-blog__item__text {
+                padding: 20px 0 0;
+            }
+            
+            .staging-blog__item__quote {
+                padding: 25px 20px;
+                margin: 40px 0;
+            }
+            
+            .staging-blog__item__quote p {
+                font-size: 18px;
+            }
+            
+            .staging-blog__item__quote:after {
+                font-size: 60px;
+                right: 20px;
+            }
+            
+            .staging-blog__pagination {
+                text-align: center;
+            }
+            
+            .staging-blog__item ul li {
+                font-size: 12px;
+                margin-right: 20px;
+            }
+            
+            .staging-blog__item ul li:after {
+                right: -15px;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .staging-blog__item h2 {
+                font-size: 1.25rem;
+            }
+            
+            .staging-blog__item ul li {
+                margin-right: 15px;
+                font-size: 11px;
+            }
+            
+            .staging-blog__item ul li:after {
+                right: -10px;
+            }
+            
+            .staging-blog__item__quote p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .staging-blog__sidebar__about {
+                padding: 20px;
+            }
+        }
+        /*blog center ends*/
+ .background {
+     background-image: url('https://preview.colorlib.com/theme/staging/img/project/project-p4.jpg');
+     height: 50vh;
+     /* Full screen height */
+     background-size: cover;
+     /* Cover the whole area */
+     background-position: center;
+     /* Center the image */
+     position: relative;
+     backdrop-filter: blur;
+ }
+ 
+ /*Loading Screen Starts*/
+ #loading-screen {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+     transition: opacity 0.5s ease-out;
+ }
+
+ #loading-screen.fade-out {
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ /* Spinner Animation */
+ .spinner {
+     width: 50px;
+     height: 50px;
+     border: 3px solid transparent;
+     border-top: 3px solid purple;
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ /*Loading Screen Ends*/
+ /*header section text starts*/
+  .header-section {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 1rem;
+        }
+
+        .home-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .separator {
+            color: #ccc;
+            margin: 0 3px;
+        }
+
+        .current-page {
+            color: #f7b95a;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 1.5rem;
+            }
+        }
+    /*header section text ends*/     
+ /*navbar starts*/
+ ul.menu a.active1,
+ .mobile-menu a.active1 {
+     border-bottom: 3px solid #f7b95a;
+     color: #f7b95a;
+ }
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 30px;
+     background-color: #222;
+     position: relative;
+ }
+
+ .logo {
+     font-size: 28px;
+     font-weight: bold;
+     color: white;
+ }
+
+ .logo span {
+     color: #f7b95a;
+ }
+
+ nav {
+     display: flex;
+     align-items: center;
+ }
+
+ ul.menu {
+     list-style: none;
+     display: flex;
+     gap: 30px;
+     margin: 0;
+     padding: 0;
+ }
+
+ ul.menu li {
+     position: relative;
+ }
+
+ ul.menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ ul.menu a:hover {
+     color: #f7b95a;
+ }
+
+ .dropdown-menu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: #333;
+     min-width: 160px;
+     z-index: 999;
+     flex-direction: column;
+     color: aliceblue;
+     padding: 10px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .dropdown:hover .dropdown-menu {
+     display: flex;
+ }
+
+ .dropdown-menu li {
+     width: 100%;
+ }
+
+ .dropdown-menu a {
+     padding: 10px 20px;
+     color: white;
+ }
+
+ /* Hamburger */
+ .hamburger {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     cursor: pointer;
+ }
+
+ .hamburger span {
+     width: 25px;
+     height: 3px;
+     background: white;
+     transition: 0.3s ease;
+ }
+
+ .hamburger:hover span {
+     background: #f7b95a;
+ }
+
+ .hamburger.active span:nth-child(1) {
+     transform: rotate(45deg) translate(6px, 6px);
+ }
+
+ .hamburger.active span:nth-child(2) {
+     opacity: 0;
+     transform: translateX(-20px);
+ }
+
+ .hamburger.active span:nth-child(3) {
+     transform: rotate(-45deg) translate(6px, -6px);
+ }
+
+ /* Mobile Nav */
+ .mobile-menu {
+     display: none;
+     flex-direction: column;
+     position: absolute;
+     top: 70px;
+     left: 0;
+     width: 100%;
+     background: #111;
+     z-index: 998;
+     padding: 20px 30px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .mobile-menu.active {
+     display: flex;
+ }
+
+ .mobile-menu li {
+     margin-bottom: 15px;
+ }
+
+ .mobile-menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ .mobile-menu a:hover {
+     color: #f7b95a;
+ }
+
+ .mobile-dropdown>a::after {
+     content: " ▼";
+     font-size: 12px;
+ }
+
+ .mobile-dropdown-menu {
+     display: none;
+     flex-direction: column;
+     background: #222;
+     color: aliceblue;
+     margin-top: 5px;
+     padding-left: 15px;
+     list-style: none;
+     margin-bottom: 0;
+ }
+
+ .mobile-dropdown.open .mobile-dropdown-menu {
+     display: flex;
+ }
+
+ .contact {
+     display: block;
+     text-align: right;
+ }
+
+ .contact small {
+     color: #ccc;
+     font-size: 12px;
+ }
+
+ .contact p {
+     font-size: 16px;
+     color: #f7b95a;
+     font-weight: bold;
+ }
+
+ @media (max-width: 768px) {
+     nav {
+         display: none;
+     }
+
+     .hamburger {
+         display: flex;
+     }
+
+     .contact {
+         display: none;
+     }
+ }
+
+ /*navbar ends*/
+ 
+ /* Footer Starts */
+ .footer {
+     margin-top: 40px;
+     background: #1a1a1a;
+     color: #ffffff;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .footer::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-image:
+         linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%),
+         linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%);
+     background-size: 60px 60px;
+     pointer-events: none;
+ }
+
+ .footer-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ /* Main Footer Content */
+ .footer-main {
+     padding: 60px 0 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+
+ /* Newsletter Section - Top Right */
+ .newsletter-section {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 60px;
+     padding-bottom: 40px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .newsletter-section h2 {
+     font-size: 2.2rem;
+     font-weight: 400;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     color: #ffffff;
+     margin: 0;
+ }
+
+ .newsletter-form {
+     display: flex;
+     align-items: center;
+     gap: 0;
+     max-width: 400px;
+ }
+
+ .newsletter-input {
+     padding: 15px 20px;
+     border: none;
+     background: #ffffff;
+     color: #333;
+     font-size: 16px;
+     outline: none;
+     border-radius: 0;
+     width: 300px;
+ }
+
+ .newsletter-input::placeholder {
+     color: #999;
+ }
+
+ .newsletter-btn {
+     padding: 15px 20px;
+     background: #f7b95a;
+     border: none;
+     color: white;
+     cursor: pointer;
+     font-size: 16px;
+     transition: background 0.3s ease;
+     border-radius: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .newsletter-btn:hover {
+     background: #f7b95a;
+ }
+
+ /* Footer Grid */
+ .footer-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 60px;
+     margin-bottom: 50px;
+ }
+
+ .footer-column h3 {
+     font-size: 1.1rem;
+     margin-bottom: 25px;
+     font-weight: 500;
+     color: #ffffff;
+ }
+
+ .footer-column ul {
+     list-style: none;
+ }
+
+ .footer-column ul li {
+     margin-bottom: 15px;
+ }
+
+ .footer-column ul li a {
+     color: #888;
+     text-decoration: none;
+     transition: color 0.3s ease;
+     font-size: 14px;
+     line-height: 1.6;
+ }
+
+ .footer-column ul li a:hover {
+     color: #f7b95a;
+ }
+
+ /* Brand Column */
+ .brand-column .logo {
+     font-size: 2rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 25px;
+ }
+
+ .brand-column .logo::after {
+     content: '.';
+     color: #f7b95a;
+ }
+
+ .contact-info {
+     color: #888;
+     font-size: 14px;
+     line-height: 1.8;
+     margin-bottom: 25px;
+ }
+
+ .contact-info p {
+     margin-bottom: 5px;
+ }
+
+ .contact-info .email-phone {
+     margin-top: 15px;
+ }
+
+ /* Social Links */
+ .social-links {
+     display: flex;
+     gap: 15px;
+ }
+
+ .social-links a {
+     width: 35px;
+     height: 35px;
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #888;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     font-size: 14px;
+     font-weight: 600;
+ }
+
+ .social-links a:hover {
+     background:#f7b95a;
+     color: white;
+     transform: translateY(-2px);
+ }
+
+ /* Footer Bottom */
+ .footer-bottom {
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 25px 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 13px;
+     color: #888;
+ }
+
+ .footer-bottom a {
+     color: #f7b95a;
+     text-decoration: none;
+ }
+
+ .footer-bottom a:hover {
+     text-decoration: underline;
+ }
+
+ .footer-links {
+     display: flex;
+     gap: 30px;
+ }
+
+ .footer-links a {
+     color: #888;
+ }
+
+ .footer-links a:hover {
+     color: #f7b95a;
+ }
+
+ /* Heart icon */
+ .heart {
+     color: #f7b95a;
+     margin: 0 3px;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 1024px) {
+     .newsletter-section {
+         flex-direction: column;
+         gap: 30px;
+         text-align: center;
+     }
+
+     .newsletter-section h2 {
+         font-size: 2rem;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr 1fr;
+         gap: 40px;
+     }
+
+     .brand-column {
+         grid-column: span 3;
+         text-align: center;
+         order: -1;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .newsletter-section h2 {
+         font-size: 1.8rem;
+     }
+
+     .newsletter-form {
+         flex-direction: column;
+         gap: 15px;
+         max-width: 300px;
+         margin: 0 auto;
+     }
+
+     .newsletter-input {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .newsletter-btn {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 2;
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         gap: 15px;
+         text-align: center;
+     }
+
+     .footer-links {
+         gap: 20px;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .footer-main {
+         padding: 40px 0 0;
+     }
+
+     .newsletter-section {
+         margin-bottom: 40px;
+         padding-bottom: 30px;
+     }
+
+     .newsletter-section h2 {
+         font-size: 1.4rem;
+         letter-spacing: 0.5px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 1;
+     }
+
+     .social-links {
+         justify-content: center;
+     }
+
+     .footer-links {
+         flex-direction: column;
+         gap: 10px;
+     }
+ }
+
+ /* Footer Ends */
+    </style>
+</head>
+<body>
+     <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <script>
+        // Loading functionality started
+function showLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Show loading screen
+    loadingScreen.style.display = 'flex';
+    loadingScreen.classList.remove('fade-out');
+
+    // Hide main content
+    mainContent.classList.remove('show');
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Fade out loading screen
+    loadingScreen.classList.add('fade-out');
+
+    // Show main content
+    mainContent.classList.add('show');
+
+    // Remove loading screen from DOM after animation
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+    }, 500);
+}
+
+// Simulate loading time and hide loading screen
+window.addEventListener('load', function () {
+    // Simulate minimum loading time (adjust as needed)
+    setTimeout(hideLoading, 1500);
+});
+
+// Show loading on page refresh/navigation
+window.addEventListener('beforeunload', function () {
+    showLoading();
+});
+
+// Function to refresh the page (for demo purposes)
+function refreshPage() {
+    location.reload();
+}
+
+// Initialize - show loading screen immediately
+document.addEventListener('DOMContentLoaded', function () {
+    showLoading();
+});
+// Loading functionality ended
+    </script>
+    <!--navbar starts-->
+    <header>
+        <div class="logo">Staging<span>.</span></div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projecs.html">Project Details</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html"class="active1">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html" class="active1">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact">
+            <small>Call us for any questions</small>
+            <p>+01 123 456 789</p>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-dropdown" onclick="toggleDropdown(event)">
+            <a href="#">Pages</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="projects.html">Project Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html" class="active1">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html" class="active1">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const parent = e.currentTarget;
+            parent.classList.toggle('open');
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.mobile-dropdown').forEach(drop => {
+                if (!drop.contains(e.target)) {
+                    drop.classList.remove('open');
+                }
+            });
+        });
+        const links = document.querySelectorAll('a');
+        const current = window.location.pathname;
+
+        links.forEach(link => {
+            if (link.href.includes(`${current}`)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <!--navbar ends-->
+    <!-- Image on top  -->
+    <div class="background">
+        <!--header section text starts-->
+        <div class="header-section">
+        <h1 class="main-heading">OUR BLOGS</h1>
+        <nav class="breadcrumb">
+            <button class="home-button" onclick="goHome()">Home</button>
+            <span class="separator">~</span>
+            <span class="current-page">Blogs</span>
+        </nav>
+    </div>
+
+    <script>
+        function goHome() {
+            alert('Navigating to Home page...');
+            // In a real application, you would navigate to the home page
+            // window.location.href = '/';
+        }
+    </script>
+        <!--header section text ends-->
+    </div>
+    <!--blog center starts-->
+    <div class="staging-wrapper">
+        <!-- Blog Section -->
+        <section class="staging-blog staging-spad">
+            <div class="staging-container">
+                <div class="staging-grid-container">
+                    <div class="staging-grid-8">
+                        <div class="staging-blog__item__list">
+                            <article class="staging-blog__item">
+                                <ul>
+                                    <li>December 20, 2019</li>
+                                    <li>By John Doe</li>
+                                    <li>Planning</li>
+                                </ul>
+                                <h2>Target and Amazon Shopping List for Home Stagers</h2>
+                                <img src="https://preview.colorlib.com/theme/staging/img/blog/blog-1.jpg.webp" alt="Home staging shopping list" loading="lazy">
+                                <div class="staging-blog__item__text">
+                                    <p>Discover essential items every home stager needs from Target and Amazon. From furniture accessories to decorative elements, we've compiled the ultimate shopping guide to help you create stunning staged homes that sell faster and for better prices.</p>
+                                    <a href="#" aria-label="Read more about Target and Amazon Shopping List">Read more</a>
+                                </div>
+                            </article>
+
+                            <div class="staging-blog__item__quote">
+                                <p>"Without question this is the stager you want to use! Jennifer staged a hard to sell home for me and we sold it fast! Jennifer made it possible."</p>
+                                <span>Martin Lockhart</span>
+                            </div>
+
+                            <article class="staging-blog__item">
+                                <ul>
+                                    <li>December 15, 2019</li>
+                                    <li>By Jane Smith</li>
+                                    <li>Team Building</li>
+                                </ul>
+                                <h2>6 Ideas for Team Building & Employee Appreciation for Home Stagers</h2>
+                                <img src="https://preview.colorlib.com/theme/staging/img/blog/blog-2.jpg.webp" alt="Team building ideas for home stagers" loading="lazy">
+                                <div class="staging-blog__item__text">
+                                    <p>Building a strong team is crucial for home staging success. Explore creative team-building activities and employee appreciation strategies that will boost morale, improve collaboration, and create a positive work environment in your staging business.</p>
+                                    <a href="#" aria-label="Read more about Team Building Ideas">Read more</a>
+                                </div>
+                            </article>
+
+                            <article class="staging-blog__item">
+                                <ul>
+                                    <li>December 10, 2019</li>
+                                    <li>By Mike Johnson</li>
+                                    <li>Business</li>
+                                </ul>
+                                <h2>How to Find the Best Price Structure for Your Home Staging Services</h2>
+                                <img src="https://preview.colorlib.com/theme/staging/img/blog/blog-1.jpg.webp" alt="Pricing structure for home staging services" loading="lazy">
+                                <div class="staging-blog__item__text">
+                                    <p>Setting the right prices for your home staging services can make or break your business. Learn proven strategies for creating competitive pricing structures that attract clients while ensuring profitability and sustainable growth.</p>
+                                    <a href="#" aria-label="Read more about Pricing Structure">Read more</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="staging-blog__pagination">
+                            <a href="#" aria-label="Page 1">1</a>
+                            <a href="#" aria-label="Page 2">2</a>
+                            <a href="#" aria-label="Page 3">3</a>
+                            <a href="#" aria-label="Next page">→</a>
+                        </div>
+                    </div>
+
+                    <aside class="staging-grid-4">
+                        <div class="staging-blog__sidebar">
+                            <div class="staging-blog__sidebar__about">
+                                <img class="staging-author__pic" src="https://preview.colorlib.com/theme/staging/img/blog/blog-about.png.webp" alt="Author Jennifer Martinez">
+                                <p>Professional home stager with over 10 years of experience helping homeowners and real estate agents sell properties faster through strategic staging.</p>
+                                <img src="https://preview.colorlib.com/theme/staging/img/blog/signature.png.webp" alt="Jennifer's signature" loading="lazy">
+                            </div>
+
+                            <div class="staging-blog__sidebar__search">
+                                <form action="#" role="search">
+                                    <label for="staging-search-input" class="staging-sr-only">Search articles</label>
+                                    <input type="text" id="staging-search-input" placeholder="Search articles...">
+                                    <button type="submit" aria-label="Search">🔍</button>
+                                </form>
+                            </div>
+
+                            <div class="staging-blog__sidebar__categories">
+                                <h5>Categories</h5>
+                                <ul>
+                                    <li>Home Staging Tips</li>
+                                    <li>Business Strategy</li>
+                                    <li>Design Trends</li>
+                                    <li>Client Relations</li>
+                                    <li>Industry News</li>
+                                </ul>
+                            </div>
+
+                            <div class="staging-blog__sidebar__feature">
+                                <h5>Featured Posts</h5>
+                                <a href="#" class="staging-blog__sidebar__feature__item">
+                                    <div class="staging-blog__sidebar__feature__item__pic">
+                                        <img src="https://preview.colorlib.com/theme/staging/img/blog/br-1.jpg.webp" alt="Staging trends article" loading="lazy">
+                                    </div>
+                                    <div class="staging-blog__sidebar__feature__item__text">
+                                        <span>December 18, 2019</span>
+                                        <h6>2020 Home Staging Trends That Will Transform Your Business</h6>
+                                    </div>
+                                </a>
+                                <a href="#" class="staging-blog__sidebar__feature__item">
+                                    <div class="staging-blog__sidebar__feature__item__pic">
+                                        <img src="https://preview.colorlib.com/theme/staging/img/blog/br-2.jpg.webp" alt="Budget staging article" loading="lazy">
+                                    </div>
+                                    <div class="staging-blog__sidebar__feature__item__text">
+                                        <span>December 16, 2019</span>
+                                        <h6>Budget-Friendly Staging Solutions for Every Home</h6>
+                                    </div>
+                                </a>
+                                <a href="#" class="staging-blog__sidebar__feature__item">
+                                    <div class="staging-blog__sidebar__feature__item__pic">
+                                        <img src="https://preview.colorlib.com/theme/staging/img/blog/br-3.jpg.webp" alt="Staging mistakes article" loading="lazy">
+                                    </div>
+                                    <div class="staging-blog__sidebar__feature__item__text">
+                                        <span>December 14, 2019</span>
+                                        <h6>Common Staging Mistakes and How to Avoid Them</h6>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="staging-blog__sidebar__tag">
+                                <h5>Popular Tags</h5>
+                                <a href="#">Home Staging</a>
+                                <a href="#">Interior Design</a>
+                                <a href="#">Real Estate</a>
+                                <a href="#">Furniture</a>
+                                <a href="#">Decor</a>
+                                <a href="#">Business Tips</a>
+                                <a href="#">Color Theory</a>
+                                <a href="#">Lighting</a>
+                                <a href="#">Space Planning</a>
+                            </div>
+
+                            <div class="staging-blog__sidebar__social">
+                                <h5>Follow Us</h5>
+                                <a href="#" aria-label="Follow us on Facebook">f</a>
+                                <a href="#" aria-label="Follow us on Twitter">t</a>
+                                <a href="#" aria-label="Follow us on Instagram">i</a>
+                                <a href="#" aria-label="Follow us on LinkedIn">in</a>
+                            </div>
+
+                            <div class="staging-blog__sidebar__newslatter">
+                                <h5>Newsletter</h5>
+                                <form action="#" role="form">
+                                    <label for="staging-newsletter-input" class="staging-sr-only">Subscribe to newsletter</label>
+                                    <input type="email" id="staging-newsletter-input" placeholder="Your email address" required>
+                                    <button type="submit" aria-label="Subscribe">→</button>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Renamed form handling functions to avoid conflicts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search form handler
+            const stagingSearchForm = document.querySelector('.staging-blog__sidebar__search form');
+            if (stagingSearchForm) {
+                stagingSearchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const searchInput = this.querySelector('input');
+                    if (searchInput.value.trim()) {
+                        console.log('Staging blog searching for:', searchInput.value);
+                        // Add your search logic here
+                    }
+                });
+            }
+
+            // Newsletter form handler
+            const stagingNewsletterForm = document.querySelector('.staging-blog__sidebar__newslatter form');
+            if (stagingNewsletterForm) {
+                stagingNewsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input');
+                    if (emailInput.value.trim() && emailInput.checkValidity()) {
+                        alert('Thank you for subscribing to our staging blog newsletter!');
+                        emailInput.value = '';
+                    }
+                });
+            }
+        });
+    </script>
+    <!--blog center ends-->
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-section">
+                        <h2>Ready to Work with Us?</h2>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+                            <button type="submit" class="newsletter-btn">✈</button>
+                        </form>
+                    </div>
+
+                    <!-- Footer Grid -->
+                    <div class="footer-grid">
+                        <!-- Brand Column -->
+                        <div class="footer-column brand-column">
+                            <div class="logo">Staging</div>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook">f</a>
+                                <a href="#" aria-label="Twitter">t</a>
+                                <a href="#" aria-label="Instagram">ig</a>
+                                <a href="#" aria-label="LinkedIn">in</a>
+                            </div>
+                        </div>
+
+                        <!-- Company Column -->
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Our Works</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Services Column -->
+                        <div class="footer-column">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Interior Design</a></li>
+                                <li><a href="#">Exterior Design</a></li>
+                                <li><a href="#">Planning</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Get In Touch Column -->
+                        <div class="footer-column">
+                            <h3>Get In Touch</h3>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First div started-->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div>
+                            Copyright © 2025 All rights reserved | This template is made with <span
+                                class="heart">♥</span> by <a href="#">Colorlib</a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#">Terms of use</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form functionality
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

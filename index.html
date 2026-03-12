@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <script src="home.js"></script>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <!--navbar starts-->
+    <header>
+        <div class="logo">Staging<span>.</span></div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html" class="active1">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html">Project Details</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact">
+            <small>Call us for any questions</small>
+            <p>+01 123 456 789</p>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html" class="active1">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-dropdown" onclick="toggleDropdown(event)">
+            <a href="#">Pages</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="#">Project Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const parent = e.currentTarget;
+            parent.classList.toggle('open');
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.mobile-dropdown').forEach(drop => {
+                if (!drop.contains(e.target)) {
+                    drop.classList.remove('open');
+                }
+            });
+        });
+        const links = document.querySelectorAll('a');
+        const current = window.location.pathname;
+
+        links.forEach(link => {
+            if (link.href.includes(`${current}`)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <!--navbar ends-->
+    <!-- Image on top  -->
+    <div class="background">
+        <!--top div starts-->
+        <div class="main-container2">
+            <div class="container2">
+                <h1 class="main-text">
+                    <span class="word">QUALITY</span>
+                    <span class="word">IS</span>
+                    <span class="word">NOT</span>
+                    <span class="word">ONLY</span>
+                    <br>
+                    <span class="word">OUR</span>
+                    <span class="word">STANDARD.</span>
+                </h1>
+
+                <a href="#" class="button1 cta-button1" onclick="handleButtonClick()">See Project</a>
+
+                <div class="nav-buttons-container2">
+                    <button class="button1 nav-button1 left" onclick="slideLeft()" aria-label="Previous">
+                        <span>‹</span>
+                    </button>
+
+                    <button class="button1 nav-button1 right" onclick="slideRight()" aria-label="Next">
+                        <span>›</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop nav buttons (hidden on mobile) -->
+            <button class="button1 nav-button1 left desktop-nav" onclick="slideLeft()" aria-label="Previous">
+                <span>‹</span>
+            </button>
+
+            <button class="button1 nav-button1 right desktop-nav" onclick="slideRight()" aria-label="Next">
+                <span>›</span>
+            </button>
+        </div>
+
+        <script>
+            function handleButtonClick() {
+                console.log('See Project clicked!');
+                // Add your navigation logic here
+                restartAnimation();
+                // You can add additional project-specific logic here
+                // For example: window.location.href = '/projects';
+            }
+
+            function slideLeft() {
+                console.log('Previous slide');
+                // Add your previous slide logic here
+                restartAnimation();
+            }
+
+            function slideRight() {
+                console.log('Next slide');
+                // Add your next slide logic here
+                restartAnimation();
+            }
+
+            function restartAnimation() {
+                const words = document.querySelectorAll('.word');
+                const button = document.querySelector('.cta-button1');
+
+                // Reset animations
+                words.forEach(word => {
+                    word.style.animation = 'none';
+                    word.offsetHeight; // Trigger reflow
+                    word.style.animation = null;
+                });
+
+                button.style.animation = 'none';
+                button.offsetHeight; // Trigger reflow
+                button.style.animation = null;
+
+                // Add blink effect
+                setTimeout(() => {
+                    words.forEach(word => {
+                        word.classList.add('blink-animation');
+                    });
+
+                    setTimeout(() => {
+                        words.forEach(word => {
+                            word.classList.remove('blink-animation');
+                        });
+                    }, 3000);
+                }, 1600);
+            }
+
+            // Auto-start blink animation after initial load
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const words = document.querySelectorAll('.word');
+                    words.forEach(word => {
+                        word.classList.add('blink-animation');
+                    });
+
+                    setTimeout(() => {
+                        words.forEach(word => {
+                            word.classList.remove('blink-animation');
+                        });
+                    }, 3000);
+                }, 2000);
+            });
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    slideLeft();
+                } else if (e.key === 'ArrowRight') {
+                    slideRight();
+                }
+            });
+        </script>
+        <!--top div ends-->
+    </div>
+
+    <!-- First div started-->
+    <div class="container1">
+        <div class="content">
+            <div class="subtitle">WHO ARE WE</div>
+            <h1 class="title">WE PROPOSE AND DISCUSS DESIGN RULES</h1>
+            <p class="description">
+                Metasurfaces are generally designed by placing scatterers in periodic or pseudo-periodic grids. We
+                propose and discuss design rules for functional metasurfaces with randomly placed.
+            </p>
+            <p class="lorem-text">
+                Anisotropic elements that randomly sample. Quisque sit amet nisl ante. Fusce lacinia non tellus id
+                gravida. Cras neque dolor, volutpat et hendrerit et.
+            </p>
+            <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <div class="image-section">
+            <div class="office-image-container">
+                <img src="https://preview.colorlib.com/theme/staging/img/about-pic.jpg"
+                    alt="Modern office interior with people having a discussion" class="office-image"
+                    title="Office Discussion Scene">
+            </div>
+        </div>
+    </div>
+    <!-- First div ended-->
+    <!--moving gallery in a row starts-->
+    <div class="gallery-section">
+        <div class="section-header">
+            <div class="section-subtitle">OUR WORKS</div>
+            <h2 class="section-title">LATEST PROJECTS</h2>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop"
+                        alt="Typography Design">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">GRAPHIC DESIGN</div>
+                        <h3 class="project-title">HELVETICA TYPOGRAPHY</h3>
+                        <p class="project-description">Modern typography poster design with clean aesthetics</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p1.jpg" alt="Dining Room">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">INTERIORS</div>
+                        <h3 class="project-title">MODERN DINING SPACE</h3>
+                        <p class="project-description">Contemporary dining room with elegant fixtures</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p2.jpg" alt="Office Space">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">WORKSPACE</div>
+                        <h3 class="project-title">CREATIVE OFFICE</h3>
+                        <p class="project-description">Inspiring workspace design for modern professionals</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop&hue=30"
+                        alt="Living Room">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">INTERIORS</div>
+                        <h3 class="project-title">LOWER RIVER STREET ASTORIA</h3>
+                        <p class="project-description">Luxury residential interior with premium finishes</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p6.jpg"
+                        alt="Kitchen Design">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">KITCHEN</div>
+                        <h3 class="project-title">MINIMALIST KITCHEN</h3>
+                        <p class="project-description">Clean lines and functional design for modern living</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=500&fit=crop"
+                        alt="Bedroom">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">BEDROOM</div>
+                        <h3 class="project-title">SERENE BEDROOM</h3>
+                        <p class="project-description">Peaceful retreat with natural textures and soft lighting</p>
+                    </div>
+                </div>
+
+                <!-- Duplicate items for seamless scroll -->
+                <div class="gallery-item">
+                    <img src="hhttps://preview.colorlib.com/theme/staging/img/project/project-p4.jpg"
+                        alt="Typography Design">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">GRAPHIC DESIGN</div>
+                        <h3 class="project-title">HELVETICA TYPOGRAPHY</h3>
+                        <p class="project-description">Modern typography poster design with clean aesthetics</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=500&fit=crop&brightness=0.8"
+                        alt="Dining Room">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-content">
+                        <div class="project-category">INTERIORS</div>
+                        <h3 class="project-title">MODERN DINING SPACE</h3>
+                        <p class="project-description">Contemporary dining room with elegant fixtures</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-button nav-prev" onclick="moveGallery(-1)">❮</button>
+            <button class="nav-button nav-next" onclick="moveGallery(1)">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const track = document.getElementById('galleryTrack');
+        const items = document.querySelectorAll('.gallery-item');
+        const itemsPerView = Math.floor(window.innerWidth / 380); // Approximate items visible
+        const totalItems = items.length / 2; // Half because we duplicated items
+        let isAutoScrolling = true;
+
+        function moveGallery(direction) {
+            isAutoScrolling = false;
+            track.classList.remove('auto-scroll');
+
+            currentIndex += direction;
+
+            if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            }
+
+            const moveAmount = currentIndex * (350 + 30); // item width + gap
+            track.style.transform = `translateX(-${moveAmount}px)`;
+
+            // Resume auto-scroll after 5 seconds
+            setTimeout(() => {
+                isAutoScrolling = true;
+                track.classList.add('auto-scroll');
+            }, 5000);
+        }
+
+        // Initialize auto-scroll
+        track.classList.add('auto-scroll');
+
+        // Pause auto-scroll on hover
+        track.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+
+        track.addEventListener('mouseleave', () => {
+            if (isAutoScrolling) {
+                track.style.animationPlayState = 'running';
+            }
+        });
+
+        // Handle responsive behavior
+        window.addEventListener('resize', () => {
+            track.style.transform = 'translateX(0)';
+            currentIndex = 0;
+        });
+
+        // Add touch/swipe support for mobile
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            track.style.animationPlayState = 'paused';
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    moveGallery(1); // Swipe left - move right
+                } else {
+                    moveGallery(-1); // Swipe right - move left
+                }
+            }
+
+            isDragging = false;
+        });
+    </script>
+    <!--moving gallery in a row starts-->
+    <!--stats section starts-->
+    <div class="wwd-container">
+        <!-- Header Section -->
+        <div class="wwd-section-header">
+            <div class="wwd-section-subtitle">OUR SPECIALIZATION</div>
+            <h1 class="wwd-section-title">WHAT WE DO</h1>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="wwd-services-grid">
+            <!-- Interior Design -->
+            <div class="wwd-service-item">
+                <svg class="wwd-service-icon" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M9 9h6v6H9z" />
+                    <path d="M3 9h6" />
+                    <path d="M15 9h6" />
+                    <path d="M9 3v6" />
+                    <path d="M9 15v6" />
+                </svg>
+                <h3 class="wwd-service-title">INTERIOR DESIGN</h3>
+                <p class="wwd-service-description">As you might expect of a company that began as a high-end interiors
+                    contractor, we pay strict attention.</p>
+            </div>
+
+            <!-- Office Design -->
+            <div class="wwd-service-item">
+                <svg class="wwd-service-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 21h18" />
+                    <path d="M5 21V7l8-4v18" />
+                    <path d="M19 21V11l-6-4" />
+                    <path d="M9 9v.01" />
+                    <path d="M9 12v.01" />
+                    <path d="M9 15v.01" />
+                    <path d="M9 18v.01" />
+                </svg>
+                <h3 class="wwd-service-title">OFFICE DESIGN</h3>
+                <p class="wwd-service-description">Our commitment to exceptional quality has never wavered. To day ranks
+                    as one of the most highly-regarded construction.</p>
+            </div>
+
+            <!-- Home Design -->
+            <div class="wwd-service-item">
+                <svg class="wwd-service-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9,22 9,12 15,12 15,22" />
+                    <circle cx="12" cy="7" r="1" />
+                </svg>
+                <h3 class="wwd-service-title">HOME DESIGN</h3>
+                <p class="wwd-service-description">Interdisciplinary architectural studio with cultural, residential and
+                    commercial projects built worldwide.</p>
+            </div>
+
+            <!-- Design Drawing -->
+            <div class="wwd-service-item">
+                <svg class="wwd-service-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                    <path d="M15 5l3 3" />
+                </svg>
+                <h3 class="wwd-service-title">DESIGN DRAWING</h3>
+                <p class="wwd-service-description">Creating architectural and creative solutions to help people realize
+                    their vision and make them a reality.</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="wwd-stats-grid">
+            <div class="wwd-stat-item">
+                <div class="wwd-stat-number">85</div>
+                <div class="wwd-stat-label">PROJECTS<br>COMPLETED</div>
+            </div>
+            <div class="wwd-stat-item">
+                <div class="wwd-stat-number">127</div>
+                <div class="wwd-stat-label">HAPPY<br>CLIENTS</div>
+            </div>
+            <div class="wwd-stat-item">
+                <div class="wwd-stat-number">36</div>
+                <div class="wwd-stat-label">AWARDS<br>RECEIVED</div>
+            </div>
+            <div class="wwd-stat-item">
+                <div class="wwd-stat-number">74</div>
+                <div class="wwd-stat-label">CUPS OF<br>COFFEE</div>
+            </div>
+        </div>
+    </div>
+    <!--stats section ends-->
+    <!--hero section starts-->
+    <div class="hero-container">
+        <section class="hero-section">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+
+            <div class="hero-content">
+                <div class="hero-subtitle">Why Choose Us?</div>
+                <h1 class="hero-title">
+                    OUR ABILITY TO DELIVER OUTSTANDING RESULTS FOR OUR CLIENTS STARTS WITH OUR TEAM OF SMART.
+                </h1>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+    </div>
+    <!--hero section ends-->
+    <!--blog section with 3 pictures starts-->
+    <section class="blog-section">
+        <div class="blog-header">
+            <div class="blog-title-container">
+                <p class="blog-subtitle">LATEST NEWS</p>
+                <h2 class="blog-main-title">FROM OUR BLOG</h2>
+            </div>
+            <a href="#" class="view-all-btn">View All</a>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Modern living room staging" class="blog-image">
+                <div class="blog-content">
+                    <p class="blog-category">ARCHITECTURE</p>
+                    <h3 class="blog-card-title">Target and Amazon Shopping List for Home Stagers</h3>
+                    <a href="#" class="read-more-btn">Read more</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Contemporary kitchen design" class="blog-image">
+                <div class="blog-content">
+                    <p class="blog-category">INTERIOR</p>
+                    <h3 class="blog-card-title">6 Ideas for Team Building and Employee Appreciation for Home Stagers
+                    </h3>
+                    <a href="#" class="read-more-btn">Read more</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Home office workspace" class="blog-image">
+                <div class="blog-content">
+                    <p class="blog-category">PLANNING</p>
+                    <h3 class="blog-card-title">How to Find the Best Price Structure for Your Home Staging Services</h3>
+                    <a href="#" class="read-more-btn">Read more</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!--blog section with 3 pictures ends-->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-section">
+                        <h2>Ready to Work with Us?</h2>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+                            <button type="submit" class="newsletter-btn">✈</button>
+                        </form>
+                    </div>
+
+                    <!-- Footer Grid -->
+                    <div class="footer-grid">
+                        <!-- Brand Column -->
+                        <div class="footer-column brand-column">
+                            <div class="logo">Staging</div>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook">f</a>
+                                <a href="#" aria-label="Twitter">t</a>
+                                <a href="#" aria-label="Instagram">ig</a>
+                                <a href="#" aria-label="LinkedIn">in</a>
+                            </div>
+                        </div>
+
+                        <!-- Company Column -->
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Our Works</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Services Column -->
+                        <div class="footer-column">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Interior Design</a></li>
+                                <li><a href="#">Exterior Design</a></li>
+                                <li><a href="#">Planning</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Get In Touch Column -->
+                        <div class="footer-column">
+                            <h3>Get In Touch</h3>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First div started-->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div>
+                            Copyright © 2025 All rights reserved | This template is made with <span
+                                class="heart">♥</span> by <a href="#">Colorlib</a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#">Terms of use</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form functionality
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

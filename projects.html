@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+         * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .background {
+     background-image: url('https://preview.colorlib.com/theme/staging/img/project/project-p4.jpg');
+     height: 50vh;
+     /* Full screen height */
+     background-size: cover;
+     /* Cover the whole area */
+     background-position: center;
+     /* Center the image */
+     position: relative;
+     backdrop-filter: blur;
+ }
+ 
+ /*Loading Screen Starts*/
+ #loading-screen {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+     transition: opacity 0.5s ease-out;
+ }
+
+ #loading-screen.fade-out {
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ /* Spinner Animation */
+ .spinner {
+     width: 50px;
+     height: 50px;
+     border: 3px solid transparent;
+     border-top: 3px solid purple;
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ /*Loading Screen Ends*/
+ /*header section text starts*/
+  .header-section {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .main-heading {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            font-size: 1rem;
+        }
+
+        .home-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .separator {
+            color: #ccc;
+            margin: 0 3px;
+        }
+
+        .current-page {
+            color: #f7b95a;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 1.5rem;
+            }
+        }
+    /*header section text ends*/     
+    /*gallery with 6 pics start*/
+    
+        .gallery-wrapper {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            padding: 40px 20px;
+            margin-top:50px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-caption h3 {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 600;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .load-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            padding: clamp(14px, 2.5vw, 18px) clamp(30px, 4vw, 40px);
+            border: none;
+            background-color: transparent;
+            color: #2c2c2c;
+            font-size: clamp(14px, 2.5vw, 16px);
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+            border-right: none;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover::before {
+            border: 1px solid #2c2c2c;
+        }
+
+        .view-all-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+      /*gallery with 6 pics ends*/    
+ /*navbar starts*/
+ ul.menu a.active1,
+ .mobile-menu a.active1 {
+     border-bottom: 3px solid #f7b95a;
+     color: #f7b95a;
+ }
+
+ header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 30px;
+     background-color: #222;
+     position: relative;
+ }
+
+ .logo {
+     font-size: 28px;
+     font-weight: bold;
+     color: white;
+ }
+
+ .logo span {
+     color: #f7b95a;
+ }
+
+ nav {
+     display: flex;
+     align-items: center;
+ }
+
+ ul.menu {
+     list-style: none;
+     display: flex;
+     gap: 30px;
+     margin: 0;
+     padding: 0;
+ }
+
+ ul.menu li {
+     position: relative;
+ }
+
+ ul.menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ ul.menu a:hover {
+     color: #f7b95a;
+ }
+
+ .dropdown-menu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: #333;
+     min-width: 160px;
+     z-index: 999;
+     flex-direction: column;
+     color: aliceblue;
+     padding: 10px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .dropdown:hover .dropdown-menu {
+     display: flex;
+ }
+
+ .dropdown-menu li {
+     width: 100%;
+ }
+
+ .dropdown-menu a {
+     padding: 10px 20px;
+     color: white;
+ }
+
+ /* Hamburger */
+ .hamburger {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     cursor: pointer;
+ }
+
+ .hamburger span {
+     width: 25px;
+     height: 3px;
+     background: white;
+     transition: 0.3s ease;
+ }
+
+ .hamburger:hover span {
+     background: #f7b95a;
+ }
+
+ .hamburger.active span:nth-child(1) {
+     transform: rotate(45deg) translate(6px, 6px);
+ }
+
+ .hamburger.active span:nth-child(2) {
+     opacity: 0;
+     transform: translateX(-20px);
+ }
+
+ .hamburger.active span:nth-child(3) {
+     transform: rotate(-45deg) translate(6px, -6px);
+ }
+
+ /* Mobile Nav */
+ .mobile-menu {
+     display: none;
+     flex-direction: column;
+     position: absolute;
+     top: 70px;
+     left: 0;
+     width: 100%;
+     background: #111;
+     z-index: 998;
+     padding: 20px 30px;
+     list-style: none;
+     margin: 0;
+ }
+
+ .mobile-menu.active {
+     display: flex;
+ }
+
+ .mobile-menu li {
+     margin-bottom: 15px;
+ }
+
+ .mobile-menu a {
+     text-decoration: none;
+     color: white;
+     font-weight: 600;
+     padding: 8px 0;
+     display: block;
+ }
+
+ .mobile-menu a:hover {
+     color: #f7b95a;
+ }
+
+ .mobile-dropdown>a::after {
+     content: " ▼";
+     font-size: 12px;
+ }
+
+ .mobile-dropdown-menu {
+     display: none;
+     flex-direction: column;
+     background: #222;
+     color: aliceblue;
+     margin-top: 5px;
+     padding-left: 15px;
+     list-style: none;
+     margin-bottom: 0;
+ }
+
+ .mobile-dropdown.open .mobile-dropdown-menu {
+     display: flex;
+ }
+
+ .contact {
+     display: block;
+     text-align: right;
+ }
+
+ .contact small {
+     color: #ccc;
+     font-size: 12px;
+ }
+
+ .contact p {
+     font-size: 16px;
+     color: #f7b95a;
+     font-weight: bold;
+ }
+
+ @media (max-width: 768px) {
+     nav {
+         display: none;
+     }
+
+     .hamburger {
+         display: flex;
+     }
+
+     .contact {
+         display: none;
+     }
+ }
+
+ /*navbar ends*/
+ 
+ /* Footer Starts */
+ .footer {
+     margin-top: 40px;
+     background: #1a1a1a;
+     color: #ffffff;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .footer::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-image:
+         linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%),
+         linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, transparent 70%);
+     background-size: 60px 60px;
+     pointer-events: none;
+ }
+
+ .footer-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ /* Main Footer Content */
+ .footer-main {
+     padding: 60px 0 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+
+ /* Newsletter Section - Top Right */
+ .newsletter-section {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 60px;
+     padding-bottom: 40px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .newsletter-section h2 {
+     font-size: 2.2rem;
+     font-weight: 400;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     color: #ffffff;
+     margin: 0;
+ }
+
+ .newsletter-form {
+     display: flex;
+     align-items: center;
+     gap: 0;
+     max-width: 400px;
+ }
+
+ .newsletter-input {
+     padding: 15px 20px;
+     border: none;
+     background: #ffffff;
+     color: #333;
+     font-size: 16px;
+     outline: none;
+     border-radius: 0;
+     width: 300px;
+ }
+
+ .newsletter-input::placeholder {
+     color: #999;
+ }
+
+ .newsletter-btn {
+     padding: 15px 20px;
+     background: #f7b95a;
+     border: none;
+     color: white;
+     cursor: pointer;
+     font-size: 16px;
+     transition: background 0.3s ease;
+     border-radius: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .newsletter-btn:hover {
+     background:#f7b95a;
+ }
+
+ /* Footer Grid */
+ .footer-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 60px;
+     margin-bottom: 50px;
+ }
+
+ .footer-column h3 {
+     font-size: 1.1rem;
+     margin-bottom: 25px;
+     font-weight: 500;
+     color: #ffffff;
+ }
+
+ .footer-column ul {
+     list-style: none;
+ }
+
+ .footer-column ul li {
+     margin-bottom: 15px;
+ }
+
+ .footer-column ul li a {
+     color: #888;
+     text-decoration: none;
+     transition: color 0.3s ease;
+     font-size: 14px;
+     line-height: 1.6;
+ }
+
+ .footer-column ul li a:hover {
+     color:#f7b95a;
+ }
+
+ /* Brand Column */
+ .brand-column .logo {
+     font-size: 2rem;
+     font-weight: 600;
+     color: #ffffff;
+     margin-bottom: 25px;
+ }
+
+ .brand-column .logo::after {
+     content: '.';
+     color: #f7b95a;
+ }
+
+ .contact-info {
+     color: #888;
+     font-size: 14px;
+     line-height: 1.8;
+     margin-bottom: 25px;
+ }
+
+ .contact-info p {
+     margin-bottom: 5px;
+ }
+
+ .contact-info .email-phone {
+     margin-top: 15px;
+ }
+
+ /* Social Links */
+ .social-links {
+     display: flex;
+     gap: 15px;
+ }
+
+ .social-links a {
+     width: 35px;
+     height: 35px;
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #888;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     font-size: 14px;
+     font-weight: 600;
+ }
+
+ .social-links a:hover {
+     background: #f7b95a;
+     color: white;
+     transform: translateY(-2px);
+ }
+
+ /* Footer Bottom */
+ .footer-bottom {
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+     padding: 25px 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 13px;
+     color: #888;
+ }
+
+ .footer-bottom a {
+     color: #f7b95a;
+     text-decoration: none;
+ }
+
+ .footer-bottom a:hover {
+     text-decoration: underline;
+ }
+
+ .footer-links {
+     display: flex;
+     gap: 30px;
+ }
+
+ .footer-links a {
+     color: #888;
+ }
+
+ .footer-links a:hover {
+     color:#f7b95a;
+ }
+
+ /* Heart icon */
+ .heart {
+     color: #f7b95a;
+     margin: 0 3px;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 1024px) {
+     .newsletter-section {
+         flex-direction: column;
+         gap: 30px;
+         text-align: center;
+     }
+
+     .newsletter-section h2 {
+         font-size: 2rem;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr 1fr;
+         gap: 40px;
+     }
+
+     .brand-column {
+         grid-column: span 3;
+         text-align: center;
+         order: -1;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .newsletter-section h2 {
+         font-size: 1.8rem;
+     }
+
+     .newsletter-form {
+         flex-direction: column;
+         gap: 15px;
+         max-width: 300px;
+         margin: 0 auto;
+     }
+
+     .newsletter-input {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .newsletter-btn {
+         width: 100%;
+         border-radius: 4px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 2;
+     }
+
+     .footer-bottom {
+         flex-direction: column;
+         gap: 15px;
+         text-align: center;
+     }
+
+     .footer-links {
+         gap: 20px;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .footer-main {
+         padding: 40px 0 0;
+     }
+
+     .newsletter-section {
+         margin-bottom: 40px;
+         padding-bottom: 30px;
+     }
+
+     .newsletter-section h2 {
+         font-size: 1.4rem;
+         letter-spacing: 0.5px;
+     }
+
+     .footer-grid {
+         grid-template-columns: 1fr;
+         gap: 30px;
+     }
+
+     .brand-column {
+         grid-column: span 1;
+     }
+
+     .social-links {
+         justify-content: center;
+     }
+
+     .footer-links {
+         flex-direction: column;
+         gap: 10px;
+     }
+ }
+
+ /* Footer Ends */
+    </style>
+</head>
+<body>
+     <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <script>
+        // Loading functionality started
+function showLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Show loading screen
+    loadingScreen.style.display = 'flex';
+    loadingScreen.classList.remove('fade-out');
+
+    // Hide main content
+    mainContent.classList.remove('show');
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+
+    // Fade out loading screen
+    loadingScreen.classList.add('fade-out');
+
+    // Show main content
+    mainContent.classList.add('show');
+
+    // Remove loading screen from DOM after animation
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+    }, 500);
+}
+
+// Simulate loading time and hide loading screen
+window.addEventListener('load', function () {
+    // Simulate minimum loading time (adjust as needed)
+    setTimeout(hideLoading, 1500);
+});
+
+// Show loading on page refresh/navigation
+window.addEventListener('beforeunload', function () {
+    showLoading();
+});
+
+// Function to refresh the page (for demo purposes)
+function refreshPage() {
+    location.reload();
+}
+
+// Initialize - show loading screen immediately
+document.addEventListener('DOMContentLoaded', function () {
+    showLoading();
+});
+// Loading functionality ended
+    </script>
+    <!--navbar starts-->
+    <header>
+        <div class="logo">Staging<span>.</span></div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active1">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="#">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html" class="active1">Project Details</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact">
+            <small>Call us for any questions</small>
+            <p>+01 123 456 789</p>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active1">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="mobile-dropdown" onclick="toggleDropdown(event)">
+            <a href="#">Pages</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="projects.html" class="active1">Project Details</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const parent = e.currentTarget;
+            parent.classList.toggle('open');
+        }
+
+        // Close dropdowns on outside click
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.mobile-dropdown').forEach(drop => {
+                if (!drop.contains(e.target)) {
+                    drop.classList.remove('open');
+                }
+            });
+        });
+        const links = document.querySelectorAll('a');
+        const current = window.location.pathname;
+
+        links.forEach(link => {
+            if (link.href.includes(`${current}`)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <!--navbar ends-->
+    <!-- Image on top  -->
+    <div class="background">
+        <!--header section text starts-->
+        <div class="header-section">
+        <h1 class="main-heading">Our Projects</h1>
+        <nav class="breadcrumb">
+            <button class="home-button" onclick="goHome()">Home</button>
+            <span class="separator">~</span>
+            <span class="current-page">Projects</span>
+        </nav>
+    </div>
+
+    <script>
+        function goHome() {
+            alert('Navigating to Home page...');
+            // In a real application, you would navigate to the home page
+            // window.location.href = '/';
+        }
+    </script>
+        <!--header section text ends-->
+    </div>
+    <!--gallery starts-->
+    <div class="gallery-wrapper">
+        <div class="gallery-container">
+            <div class="gallery-grid">
+                <a href="#" class="gallery-item" onclick="handleItemClick('office-building')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p1.jpg" alt="Office Building">
+                    <div class="gallery-caption">
+                        <h3>Office Building</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="gallery-item" onclick="handleItemClick('furniture-decorative')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p2.jpg" alt="Furniture Decorative">
+                    <div class="gallery-caption">
+                        <h3>Furniture Decorative</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="gallery-item" onclick="handleItemClick('interior-design')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p3.jpg" alt="Interior Design">
+                    <div class="gallery-caption">
+                        <h3>Interior Design</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="gallery-item" onclick="handleItemClick('home-building')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p4.jpg" alt="Home Building">
+                    <div class="gallery-caption">
+                        <h3>Home Building</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="gallery-item" onclick="handleItemClick('decoration')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p5.jpg" alt="Decoration">
+                    <div class="gallery-caption">
+                        <h3>Decoration</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="gallery-item" onclick="handleItemClick('furniture')">
+                    <img src="https://preview.colorlib.com/theme/staging/img/project/project-p6.jpg" alt="Furniture">
+                    <div class="gallery-caption">
+                        <h3>Furniture</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="load-more-container">
+                <button class="view-all-btn" onclick="loadMore()">Load More</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleItemClick(category) {
+            console.log('Clicked on:', category);
+            alert('You clicked on: ' + category.replace('-', ' ').toUpperCase());
+        }
+
+        function loadMore() {
+            console.log('Load More clicked');
+            alert('Loading more items...');
+        }
+    </script>
+    <!--gallery ends-->
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-section">
+                        <h2>Ready to Work with Us?</h2>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+                            <button type="submit" class="newsletter-btn">✈</button>
+                        </form>
+                    </div>
+
+                    <!-- Footer Grid -->
+                    <div class="footer-grid">
+                        <!-- Brand Column -->
+                        <div class="footer-column brand-column">
+                            <div class="logo">Staging</div>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook">f</a>
+                                <a href="#" aria-label="Twitter">t</a>
+                                <a href="#" aria-label="Instagram">ig</a>
+                                <a href="#" aria-label="LinkedIn">in</a>
+                            </div>
+                        </div>
+
+                        <!-- Company Column -->
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Our Works</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Services Column -->
+                        <div class="footer-column">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Architecture</a></li>
+                                <li><a href="#">Interior Design</a></li>
+                                <li><a href="#">Exterior Design</a></li>
+                                <li><a href="#">Planning</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Get In Touch Column -->
+                        <div class="footer-column">
+                            <h3>Get In Touch</h3>
+                            <div class="contact-info">
+                                <p>7176 Blue Spring Lane</p>
+                                <p>Santa Monica, CA 90403</p>
+                                <div class="email-phone">
+                                    <p>info.colorlib@gmail.com</p>
+                                    <p>+84 123 456 789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First div started-->
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                        <div>
+                            Copyright © 2025 All rights reserved | This template is made with <span
+                                class="heart">♥</span> by <a href="#">Colorlib</a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#">Terms of use</a>
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newsletter form functionality
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Thank you for subscribing!');
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
